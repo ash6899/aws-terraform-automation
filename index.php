@@ -1,5 +1,5 @@
 welcome to yash khandelwal cloud
-<img src="dz6dkrp2dx78v.cloudfront.net/terraform.png"/>
+<img src="http://d387teja7ib4br.cloudfront.net/terraform.png"/>
 <br />
 <pre>
 <?php
