@@ -8,9 +8,6 @@
 # 6. Copy the github repo code into /var/www/html
 # 7. Create S3 bucket, and copy/deploy the images from github repo into the s3 bucket and change the permission to public readable.
 # 8 Create a Cloudfront using s3 bucket(which contains images) and use the Cloudfront URL to  update in code in /var/www/html
-# *Optional*
-# 1) Those who are familiar with jenkins or are in devops AL have to integrate jenkins in this task wherever you feel can be integrated
-# 2) create snapshot of ebs
 # Above task should be done using terraform
 provider "aws" {
   region     = "ap-south-1"
@@ -20,14 +17,6 @@ resource "tls_private_key" "task-1-private-key" {
   algorithm = "RSA"
   rsa_bits  = 2048
 }
-# variable "key" {
-#   type = string
-#   default = tls_private_key.task-1-private-key.public_key_openssh
-# }
-# variable "privatekey" {
-#   type = string
-#   default = file("G:/MLOPS/CLOUD/task1/task1.ppk")
-# }
 resource "aws_key_pair" "task-1-key" {
   depends_on = [
     tls_private_key.task-1-private-key
